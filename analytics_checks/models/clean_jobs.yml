@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: clean_jobs
+    columns:
+      - name: job_id
+        tests:
+          - not_null
+          - unique
+
+      - name: company_name
+        tests:
+          - not_null
+
+      - name: title
+        tests:
+          - not_null
