@@ -23,7 +23,7 @@ insert into clean_jobs
     )
 SELECT DISTINCT ON (job->>'slug')
     job->>'slug'                    AS job_id,
-    job->>'company_name'            AS company_name,
+    trim(job->>'company_name')      AS company_name,
     job->>'title'                   AS title,
     job->>'location'                AS location,
     (job->>'remote')::BOOLEAN       AS remote,
